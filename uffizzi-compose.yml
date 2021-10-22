@@ -24,9 +24,7 @@ services:
           memory: 250M
 
   vote:
-    build:
-      context: https://github.com/gadkins/example-voting-vote:main
-      dockerfile: Dockerfile
+    image: uffizzicloud/example-vote:latest
     deploy:
       resources:
         limits:
