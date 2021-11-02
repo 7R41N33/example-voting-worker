@@ -15,7 +15,9 @@ services:
         target: /etc/nginx/conf.d
 
   worker:
-    image: uffizziqa.azurecr.io/example-worker:latest
+    build:
+      context: https://github.com/uffizzicloud/example-voting-worker:latest
+      dockerfile: Dockerfile
     deploy:
       resources:
         limits:
