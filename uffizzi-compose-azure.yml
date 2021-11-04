@@ -16,7 +16,7 @@ services:
 
   worker:
     build:
-      context: https://github.com/uffizzicloud/example-voting-worker:latest
+      context: https://github.com/gadkins/example-voting-worker:latest
       dockerfile: Dockerfile
     deploy:
       resources:
