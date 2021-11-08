@@ -16,7 +16,7 @@ services:
 
   worker:
     build:
-      context: https://github.com/gadkins/example-voting-worker:latest
+      context: https://github.com/gadkins/example-voting-worker:main
       dockerfile: Dockerfile
     deploy:
       resources:
