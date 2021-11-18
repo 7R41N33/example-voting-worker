@@ -16,7 +16,7 @@ services:
 
   worker:
     build:
-      context: https://github.com/UffizziCloud/example-voting-worker:main
+      context: uffizziqa.azurecr.io/example-voting-worker:latest
       dockerfile: Dockerfile
     deploy:
       resources:
@@ -25,7 +25,7 @@ services:
 
   vote:
     build:
-      context: https://github.com/UffizziCloud/example-voting-vote:main
+      context: uffizziqa.azurecr.io/example-voting-vote:latest
       dockerfile: Dockerfile
     deploy:
       resources:
@@ -34,7 +34,7 @@ services:
 
   result:
     build:
-      context: https://github.com/UffizziCloud/example-voting-result:main
+      context: uffizziqa.azurecr.io/example-voting-result:latest
       dockerfile: Dockerfile
 
 continuous_preview:
