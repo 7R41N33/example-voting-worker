@@ -11,8 +11,8 @@ services:
   nginx:
     image: nginx:latest
     configs:
-      - source: vote.conf
-        target: /etc/nginx/conf.d
+      - source: vote-nginx-conf
+        target: /etc/nginx/conf.d/vote.conf
 
   worker:
     image: uffizziqa.azurecr.io/example-voting-worker:latest
@@ -27,9 +27,17 @@ services:
       resources:
         limits:
           memory: 250M
+    environment:
+      PORT: 8888
 
   result:
     image: uffizziqa.azurecr.io/example-voting-result:latest
+    environment:
+      PORT: 8088
+
+configs:
+  vote-nginx-conf:
+    file: ./configs/vote.conf
 
 continuous_preview:
   deploy_preview_when_pull_request_is_opened: true
