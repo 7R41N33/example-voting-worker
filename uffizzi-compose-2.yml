@@ -15,9 +15,6 @@ services:
         target: /etc/nginx/conf.d/vote.conf
 
   worker:
-    build: 
-      context: .
-      dockerfile: Dockerfile
     deploy:
       resources:
         limits:
