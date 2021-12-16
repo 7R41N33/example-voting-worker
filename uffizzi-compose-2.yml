@@ -15,7 +15,8 @@ services:
         target: /etc/nginx/conf.d/vote.conf
 
   worker:
-    image: uffizziqa.azurecr.io/example-voting-worker:latest
+    build:
+      context: https://github.com/gadkins/example-voting-worker
     deploy:
       resources:
         limits:
