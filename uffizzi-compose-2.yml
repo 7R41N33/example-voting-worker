@@ -15,14 +15,18 @@ services:
         target: /etc/nginx/conf.d/vote.conf
 
   worker:
-    image: uffizziqa.azurecr.io/example-voting-worker:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile
     deploy:
       resources:
         limits:
           memory: 250M
 
   vote:
-    image: uffizziqa.azurecr.io/example-voting-vote:latest
+    build:
+      context: https://github.com/UffizziCloud/example-voting-vote
+      dockerfile: Dockerfile
     deploy:
       resources:
         limits:
