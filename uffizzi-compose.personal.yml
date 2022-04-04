@@ -1,4 +1,3 @@
-# Uffizzi extension
 x-uffizzi:
   ingress:    # required
     service: loadbalancer
